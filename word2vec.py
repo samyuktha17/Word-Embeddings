@@ -2,7 +2,7 @@ import pandas as pd
 import nltk
 import gensim
 
-df = pd.read_csv("C:\\Users\\Samuktha\\mshr\\test_word2vec\\jokes.csv")
+df = pd.read_csv("file_path\jokes.csv")
 
 x = df["Question"].values.tolist()
 y = df["Answer"].values.tolist()
@@ -17,3 +17,8 @@ model.save("testmodel")
 
 model = gensim.models.Word2Vec.load("testmodel")
 
+boys = model.most_similar("Boy")
+girls = model.most_similar("Girl")
+
+print(boys)
+print(girls)
